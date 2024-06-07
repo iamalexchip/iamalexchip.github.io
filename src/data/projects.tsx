@@ -86,14 +86,6 @@ export const skills = {
 
 export const clients: Client[] = [
   {
-    name: "iamalexchip.com",
-    summary:
-      "This website. I designed the site layout myself and used inspiration from devs in my circle.",
-    role: "Solftware engineer",
-    logo: "",
-    skills: [skills.ts, skills.node, skills.react, skills.tailwind],
-  },
-  {
     name: "Santam Switch",
     country: "South Africa",
     summary:

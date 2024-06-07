@@ -1,4 +1,5 @@
 import Socials from "@/ui/Socials";
+import Image from "next/image";
 
 const heroHeader = "Alex Chipangura";
 
@@ -65,9 +66,12 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full sm:max-w-80 mr-0 sm:ml-4">
-          <img
+          <Image
             src="/images/mugshot.jpg"
             className="object-cover rounded-3xl border-yellow-500 border-4"
+            alt="Alex Chipangura"
+            width={600}
+            height={600}
           />
         </div>
       </div>
@@ -91,9 +95,12 @@ export default function Home() {
                   </p>
                 </a>
               </div>
-              <img
+              <Image
                 className="w-28 h-28 sm:w-40 sm:h-40 object-cover rounded-md border-yellow-500 border-2"
                 src="/images/photo-1494232410401-ad00d5433cfa.jpg"
+                alt="post image"
+                width={600}
+                height={600}
               />
             </div>
           ))}

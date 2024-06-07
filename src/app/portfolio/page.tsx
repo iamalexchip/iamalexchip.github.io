@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Metadata } from "next";
 import { clients } from "../../data/projects";
 import Socials from "@/ui/Socials";
+import Image from "next/image";
 
 const coverLetterP1 = `
 In my previous roles as a React Native and web developer
@@ -36,7 +37,7 @@ export default function Portifolio() {
         </div>
         <div>
           <h2 className="font-bold text-center text-3xl sm:text-2xl text-primary mt-4 mb-8">
-            MY WORK
+            {"WHO I'VE WORKED WITH"}
           </h2>
           <div className="flex flex-wrap justify-center gap-8">
             {clients.map((client, i) => (
@@ -49,9 +50,12 @@ export default function Portifolio() {
                     "p-3": client.logoBg !== "bg-transparent",
                   })}
                 >
-                  <img
+                  <Image
                     className="max-h-16"
                     src={`/images/projects/${client.logo}`}
+                    width={200}
+                    height={200}
+                    alt={client.name}
                   />
                 </div>
                 <h3 className="font-bold text-2xl text-primary sm:text-4xl mt-4">
@@ -65,8 +69,9 @@ export default function Portifolio() {
                   {client.role}
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
-                  {client.skills.map((skill) => (
+                  {client.skills.map((skill, i) => (
                     <span
+                      key={i}
                       className={clsx(
                         "border rounded-full px-2 py-1 text-sm",
                         skill.className
@@ -81,9 +86,9 @@ export default function Portifolio() {
             <div className="w-full divider divider-secondary my-8">
               and drum roll
             </div>
-            <div className="flex flex-col items-center border border-secondary rounded-md w-full px-4 py-20">
+            <div className="flex flex-col items-center border border-secondary rounded-md w-full px-4 py-28 sm:py-32">
               <h3 className="font-bold text-2xl text-secondary sm:text-4xl">
-                Your project here
+                W
               </h3>
               <p className="text-2xl text-center mt-4">
                 Wanna work together on something?
