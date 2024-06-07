@@ -46,17 +46,19 @@ export default function Portifolio() {
                 className="flex flex-col items-center py-8 border border-primary rounded-md px-2 sm:px-4 text-center w-full md:max-w-[calc(50%-16px)]"
               >
                 <div
-                  className={clsx("rounded-md", client.logoBg || "bg-white", {
-                    "p-3": client.logoBg !== "bg-transparent",
-                  })}
+                  className={clsx(
+                    "rounded-md w-full p-4",
+                    client.logoBg || "bg-white"
+                  )}
                 >
-                  <Image
-                    className="max-h-16"
-                    src={`/images/projects/${client.logo}`}
-                    width={200}
-                    height={200}
-                    alt={client.name}
-                  />
+                  <div className="relative h-16">
+                    <Image
+                      src={`/images/projects/${client.logo}`}
+                      alt={client.name}
+                      fill={true}
+                      objectFit="contain"
+                    />
+                  </div>
                 </div>
                 <h3 className="font-bold text-2xl text-primary sm:text-4xl mt-4">
                   {client.name}
