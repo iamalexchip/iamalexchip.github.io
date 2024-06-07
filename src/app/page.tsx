@@ -1,12 +1,4 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { faAt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Socials from "@/ui/Socials";
 
 const heroHeader = "Alex Chipangura";
 
@@ -15,43 +7,34 @@ I'm a Fullstack web and Mobile (React Native) developer
 who's passionate about building applications users love.
 `;
 
-const socials = [
-  {
-    name: "twitter",
-    href: "mailto:iamalexchip@gmail.com",
-    icon: faAt,
-  },
-  {
-    name: "linkedin",
-    href: "https://www.linkedin.com/in/alex-chipangura-16b75b12b/",
-    icon: faLinkedin,
-  },
-  {
-    name: "twitter",
-    href: "https://x.com/iamalexchip",
-    icon: faTwitter,
-  },
-  {
-    name: "github",
-    href: "https://github.com/iamalexchip",
-    icon: faGithub,
-  },
-  {
-    name: "youtube",
-    href: "https://www.youtube.com/@iamalexchip",
-    icon: faYoutube,
-  },
-];
+const aboutP1 = `
+I am a mobile and full-stack web developer with 8 years experience with organizations]() based in different countries and on continents.
+Currently I specialize with React/React Native on the frontend but I'm a polyglot web generalist on the backend. [AWS, GCC, etc]
+`;
+
+const aboutP2 = `
+I write about Software Engineering things on blog, [dev.to], [medium] and [hashnode].
+I also make videos on youtube and stream on twitch from time to time.
+I find joy in contributing to various communities like [insert community]
+and maintain open source projects like timetrail and [insert project] to name a few.
+`;
+const aboutP3 = `
+I’ve been programming since I was 12 but have been engineering software professionally for 8 years.
+Before formally venturing into the industry
+I mostly did platform applications while dabbling in 3D modeling/animation and indie game development.
+`;
 
 const Section = ({
   children,
   title,
+  className,
 }: {
   children: React.ReactNode;
   title: string;
+  className?: string;
 }) => (
-  <section className="mt-8">
-    <h2 className="font-bold text-3xl sm:text-2xl text-primary mb-4">
+  <section className={className}>
+    <h2 className={"font-bold text-3xl sm:text-2xl text-primary mb-4"}>
       {title}
     </h2>
     {children}
@@ -68,26 +51,17 @@ export default function Home() {
         <div className="mt-8">
           <h1 className="text-4xl mb-4">{heroHeader}</h1>
           <p className="text-xl">{headerBlurb}</p>
-          <ul className="flex justify-between sm:justify-start space-x-4 sm:space-x-8 my-6">
-            {socials.map((social) => (
-              <li key={social.name}>
-                <a
-                  className="btn btn-primary btn-outline btn-square border-0"
-                  target="_blank"
-                  href={social.href}
-                >
-                  <FontAwesomeIcon icon={social.icon as IconProp} />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <Socials />
           <div id="cta-buttons" className="flex space-x-4 mt-4">
-            <button className="btn text-lg btn-primary flex-grow">
+            <a href="/portfolio" className="btn text-lg btn-primary flex-grow">
               Portfolio
-            </button>
-            <button className="btn text-lg btn-secondary flex-grow">
-              Get in touch
-            </button>
+            </a>
+            <a
+              href="#contact-modal"
+              className="btn text-lg btn-secondary flex-grow"
+            >
+              Blog
+            </a>
           </div>
         </div>
         <div className="w-full sm:max-w-80 mr-0 sm:ml-4">
@@ -98,6 +72,11 @@ export default function Home() {
         </div>
       </div>
       <div id="sections" className="w-full max-w-screen-lg">
+        <Section title="About me" className="mb-16">
+          <p className="text-lg">{aboutP1}</p>
+          <p className="text-lg my-4">{aboutP2}</p>
+          <p className="text-lg">{aboutP3}</p>
+        </Section>
         <Section title="Featured articles">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex pb-4 mb-4 border-b border-neutral">
@@ -124,37 +103,6 @@ export default function Home() {
             </a>
           </div>
         </Section>
-        {/* TODO: Add projects section,
-        should alternate picture left and right
-        Should show image on 
-        top in responsive layout
-        <Section title="Featured projects">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex pb-4 mb-4 border-b border-neutral">
-              <div className="mr-2 sm:mr-4">
-                <a href="#">
-                  <h3 className="font-bold text-lg hover:text-primary sm:text-2xl mb-4">
-                    Project title here
-                  </h3>
-                  <p className="">
-                    And how to make your environment, tools, and setup work for
-                    you, not against you.
-                  </p>
-                </a>
-              </div>
-              <img
-                className="w-full sm:w-96 sm:h-60 object-cover rounded-md border-yellow-500 border-2"
-                src="/images/photo-1494232410401-ad00d5433cfa.jpg"
-              />
-            </div>
-          ))}
-          <div className="flex justify-end">
-            <a href="/projects" className="btn btn-primary">
-              View all projects
-            </a>
-          </div>
-        </Section>
-        */}
       </div>
     </div>
   );
