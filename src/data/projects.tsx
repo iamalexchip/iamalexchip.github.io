@@ -1,4 +1,5 @@
-type Skill = { name: string; className: string };
+import { Skill, skills } from "./skills";
+
 type Client = {
   name: string;
   link?: string;
@@ -8,80 +9,6 @@ type Client = {
   logoBg?: string;
   role: string;
   skills: Skill[];
-};
-
-export const skills = {
-  php: { name: "PHP", className: "text-purple-600 border-purple-600" },
-  laravel: { name: "Laravel", className: "text-red-600 border-red-600" },
-  material: {
-    name: "Material",
-    className: "text-blue-600 border-blue-600",
-  },
-  mobile: {
-    name: "Mobile Application Development",
-    className: "text-blue-500 border-blue-500",
-  },
-  iOS: { name: "iOS", className: "text-gray-500 border-gray-500" },
-  oop: {
-    name: "Object-Oriented Programming (OOP)",
-    className: "text-green-600 border-green-600",
-  },
-  awsLambda: {
-    name: "AWS Lambda",
-    className: "text-orange-600 border-orange-600",
-  },
-  apollo: {
-    name: "Apollo GraphQL",
-    className: "text-pink-600 border-pink-600",
-  },
-  js: {
-    name: "JavaScript",
-    className: "text-yellow-500 border-yellow-500",
-  },
-  aws: {
-    name: "Amazon Web Services (AWS)",
-    className: "text-orange-600 border-orange-600",
-  },
-  kt: { name: "Kotlin", className: "text-purple-600 border-purple-600" },
-  gql: { name: "GraphQL", className: "text-pink-600 border-pink-600" },
-  node: { name: "Node.js", className: "text-green-600 border-green-600" },
-  rn: { name: "React Native", className: "text-blue-600 border-blue-600" },
-  ts: { name: "TypeScript", className: "text-blue-500 border-blue-500" },
-  mysql: { name: "MySQL", className: "text-blue-700 border-blue-700" },
-  tdd: {
-    name: "Test-Driven Development",
-    className: "text-green-600 border-green-600",
-  },
-  redux: { name: "Redux", className: "text-purple-600 border-purple-600" },
-  ddd: {
-    name: "Domain-Driven Design (DDD)",
-    className: "text-blue-600 border-blue-600",
-  },
-  cypress: {
-    name: "Cypress",
-    className: "text-green-600 border-green-600",
-  },
-  tailwind: {
-    name: "Tailwind CSS",
-    className: "text-teal-500 border-teal-500",
-  },
-  react: { name: "React.js", className: "text-blue-500 border-blue-500" },
-  vue: { name: "Vue.js", className: "text-green-600 border-green-600" },
-  storybook: {
-    name: "Storybook",
-    className: "text-pink-600 border-pink-600",
-  },
-  rest: { name: "REST APIs", className: "text-blue-600 border-blue-600" },
-  next: { name: "Next.js", className: "" },
-  styledComponents: {
-    name: "styled-components",
-    className: "text-pink-600 border-pink-600",
-  },
-  woo: { name: "WooCommerce", className: "text-red-600 border-red-600" },
-  payfast: {
-    name: "PayFast",
-    className: "text-green-500 border-green-500",
-  },
 };
 
 export const clients: Client[] = [
@@ -94,19 +21,20 @@ export const clients: Client[] = [
     logo: "santam_switch.svg",
     skills: [
       skills.mobile,
-      skills.iOS,
-      skills.oop,
-      skills.awsLambda,
-      skills.apollo,
       skills.js,
-      skills.aws,
-      skills.kt,
-      skills.gql,
-      skills.node,
-      skills.react,
-      skills.rn,
       skills.ts,
+      skills.node,
+      skills.rn,
+      skills.android,
+      skills.kt,
+      skills.ios,
+      skills.react,
       skills.styledComponents,
+      skills.gql,
+      skills.apollo,
+      skills.aws,
+      skills.awsLambda,
+      skills.devops,
     ],
   },
   {
@@ -118,19 +46,40 @@ export const clients: Client[] = [
     logo: "decode.png",
     logoBg: "bg-black",
     skills: [
-      skills.mysql,
-      skills.mobile,
       skills.js,
+      skills.ts,
+      skills.react,
+      skills.redux,
+      skills.tailwind,
+      skills.mobile,
+      skills.rn,
+      skills.android,
+      skills.ios,
+      skills.kt,
+      skills.ddd,
       skills.tdd,
+      skills.cypress,
+    ],
+  },
+  {
+    name: "Redbear Studios",
+    country: "South Africa",
+    summary: ` 
+    We help companies deliver high value software solutions.
+    We're a fully remote team operating from across Africa
+    `,
+    role: "Mobile & Fullstack Developer",
+    logo: "redbear.png",
+    skills: [
+      skills.js,
+      skills.ts,
+      skills.react,
+      skills.next,
       skills.redux,
       skills.rn,
-      skills.ts,
-      skills.ddd,
-      skills.cypress,
-      skills.tailwind,
-      skills.react,
-      skills.storybook,
-      skills.rest,
+      skills.android,
+      skills.java,
+      skills.dotnet,
     ],
   },
   {
@@ -141,13 +90,12 @@ export const clients: Client[] = [
     role: "Frontend Developer",
     logo: "dado.jpeg",
     skills: [
-      skills.react,
       skills.vue,
-      skills.storybook,
-      skills.rest,
+      skills.react,
       skills.next,
-      skills.styledComponents,
       skills.tailwind,
+      skills.styledComponents,
+      skills.storybook,
     ],
   },
   {
@@ -158,9 +106,16 @@ export const clients: Client[] = [
       Helps handle thousands of regulatory requirements associated with multiple jurisdictions.
     `,
     logo: "auditoos.png",
-    logoBg: "bg-transparent",
+    logoBg: "bg-[#242f5e]",
     role: "Fullstack Developer",
-    skills: [skills.mysql, skills.oop, skills.js, skills.ts, skills.redux],
+    skills: [
+      skills.mysql,
+      skills.oop,
+      skills.js,
+      skills.ts,
+      skills.redux,
+      skills.devops,
+    ],
   },
   {
     name: "MADE Agency",
@@ -171,20 +126,19 @@ export const clients: Client[] = [
     logo: "made.png",
     logoBg: "bg-black",
     skills: [
+      skills.php,
       skills.mysql,
       skills.oop,
+      skills.wp,
       skills.woo,
-      skills.redux,
       skills.js,
-      skills.ts,
-      skills.php,
     ],
   },
   {
     name: "Attendize",
     summary:
       "Attendize is an Open-source ticket selling and event management platform and is everything you need for a successful event",
-    skills: [skills.mysql, skills.oop, skills.laravel],
+    skills: [skills.php, skills.laravel, skills.mysql, skills.oop],
     role: "Fullstack Contributor",
     logo: "attendize.png",
     logoBg: "bg-gray-800",
@@ -198,16 +152,17 @@ export const clients: Client[] = [
     logo: "sovtech.svg",
     logoBg: "bg-blue-700",
     skills: [
-      skills.mysql,
-      skills.oop,
-      skills.react,
-      skills.redux,
-      skills.js,
-      skills.ts,
-      skills.woo,
-      skills.rn,
       skills.php,
       skills.laravel,
+      skills.mysql,
+      skills.oop,
+      skills.wp,
+      skills.woo,
+      skills.js,
+      skills.react,
+      skills.redux,
+      skills.rn,
+      skills.devops,
     ],
   },
   {
@@ -220,11 +175,13 @@ export const clients: Client[] = [
     role: "Fullstack Developer",
     logo: "digs.svg",
     skills: [
+      skills.php,
+      skills.laravel,
       skills.mysql,
       skills.js,
-      skills.laravel,
       skills.payfast,
       skills.material,
+      skills.devops,
     ],
   },
   {
@@ -235,13 +192,13 @@ export const clients: Client[] = [
     role: "Fullstack Developer",
     logo: "cfp.png",
     skills: [
+      skills.php,
+      skills.laravel,
       skills.mysql,
       skills.oop,
       skills.vue,
       skills.js,
-      skills.ts,
-      skills.php,
-      skills.laravel,
+      skills.devops,
     ],
   },
 ];

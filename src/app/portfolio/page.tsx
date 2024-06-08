@@ -43,7 +43,7 @@ export default function Portifolio() {
             {clients.map((client, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center py-8 border border-primary rounded-md px-2 sm:px-4 text-center w-full md:max-w-[calc(50%-16px)]"
+                className="flex flex-col items-center pt-5 pb-6 border border-primary rounded-md px-2 sm:px-4 text-center w-full md:max-w-[calc(50%-16px)]"
               >
                 <div
                   className={clsx(
@@ -51,7 +51,7 @@ export default function Portifolio() {
                     client.logoBg || "bg-white"
                   )}
                 >
-                  <div className="relative h-16">
+                  <div className="relative h-12">
                     <Image
                       src={`/images/projects/${client.logo}`}
                       alt={client.name}
@@ -90,7 +90,7 @@ export default function Portifolio() {
             </div>
             <div className="flex flex-col items-center border border-secondary rounded-md w-full px-4 py-28 sm:py-32">
               <h3 className="font-bold text-2xl text-secondary sm:text-4xl">
-                W
+                Your project here
               </h3>
               <p className="text-2xl text-center mt-4">
                 Wanna work together on something?
