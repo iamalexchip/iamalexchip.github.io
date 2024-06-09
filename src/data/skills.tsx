@@ -8,7 +8,7 @@ export const skills = {
     className: "text-blue-600 border-blue-600",
   },
   mobile: {
-    name: "Mobile Application Development",
+    name: "Mobile App Development",
     className: "text-blue-500 border-blue-500",
   },
   ios: { name: "iOS", className: "text-gray-500 border-gray-500" },
@@ -77,4 +77,5 @@ export const skills = {
   dotnet: { name: ".NET", className: "text-blue-600 border-blue-600" },
   android: { name: "Android", className: "text-green-600 border-green-600" },
   devops: { name: "DevOps", className: "text-purple-600 border-purple-600" },
+  py: { name: "Python", className: "text-yellow-500 border-yellow-500" },
 };

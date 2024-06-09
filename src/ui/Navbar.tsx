@@ -1,3 +1,5 @@
+import { navLinks } from "@/data/nav";
+
 const LargeScreenOnly = ({ children }: { children: React.ReactNode }) => (
   <div className="hidden sm:block">{children}</div>
 );
@@ -11,25 +13,6 @@ const HomeLink = () => (
     iamalexchip.com
   </a>
 );
-
-const navLinks = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    name: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    name: "Contact",
-    href: "#contact-modal",
-  },
-];
 
 export default function Navbar() {
   return (
