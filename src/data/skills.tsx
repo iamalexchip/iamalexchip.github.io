@@ -78,4 +78,20 @@ export const skills = {
   android: { name: "Android", className: "text-green-600 border-green-600" },
   devops: { name: "DevOps", className: "text-purple-600 border-purple-600" },
   py: { name: "Python", className: "text-yellow-500 border-yellow-500" },
+  netlify: { name: "Netlify", className: "text-blue-600 border-blue-600" },
+  vercel: { name: "Vercel", className: "text-blue-600 border-blue-600" },
+  gcc: {
+    name: "Google Cloud Platform",
+    className: "text-red-600 border-red-600",
+  },
+  docker: { name: "Docker", className: "text-purple-600 border-purple-600" },
+  fastapi: { name: "FastAPI", className: "text-pink-600 border-pink-600" },
+  postgres: { name: "PostgreSQL", className: "text-blue-600 border-blue-600" },
+  linux: { name: "Linux", className: "text-blue-600 border-blue-600" },
+  jira: { name: "Jira", className: "text-blue-600 border-blue-600" },
+  scrum: { name: "Scrum", className: "text-blue-600 border-blue-600" },
+  responsive: {
+    name: "Responsive Web Design",
+    className: "text-blue-600 border-blue-600",
+  },
 };

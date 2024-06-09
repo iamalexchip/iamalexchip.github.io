@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { clients } from "../../data/clients";
 import Socials from "@/ui/Socials";
 import Image from "next/image";
+import { Heading } from "@/ui/elements";
+import { Skill, skills } from "@/data/skills";
 
 const coverLetterP1 = `
 In my previous roles as a React Native and web developer
@@ -19,6 +21,14 @@ like Vercel, Netlify, Microsoft AppCenter to name a few.
 I'm also comfortable working with languages like Java, Kotlin and Python which I've worked with to some capacity in the past.
 `;
 
+const SkillPill = ({ skill }: { skill: Skill }) => (
+  <span
+    className={clsx("border rounded-full px-2 py-1 text-sm", skill.className)}
+  >
+    {skill.name}
+  </span>
+);
+
 export const metadata: Metadata = {
   title: "Portifolio - Alex Chipangura",
   description: "Alex Chipangura's Portifolio",
@@ -28,17 +38,67 @@ export default function Portifolio() {
   return (
     <div className="flex flex-col items-center p-4">
       <div className="max-w-screen-lg">
-        <div className="mb-16">
-          <h2 className="font-bold text-center text-3xl sm:text-2xl text-primary mt-4 mb-8">
-            EXPERIENCE
-          </h2>
+        <div className="mb-8">
+          <Heading center>EXPERIENCE</Heading>
           <p className="text-lg mb-4">{coverLetterP1}</p>
           <p className="text-lg">{coverLetterP2}</p>
         </div>
+        <div className="mb-8">
+          <Heading center>MY SKILLS</Heading>
+          <h3 className="font-bold text-secondary">Languages</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <SkillPill skill={skills.js} />
+            <SkillPill skill={skills.ts} />
+            <SkillPill skill={skills.php} />
+            <SkillPill skill={skills.kt} />
+            <SkillPill skill={skills.java} />
+            <SkillPill skill={skills.py} />
+          </div>
+          <h3 className="font-bold text-secondary mt-4">Frameworks</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <SkillPill skill={skills.react} />
+            <SkillPill skill={skills.rn} />
+            <SkillPill skill={skills.next} />
+            <SkillPill skill={skills.vue} />
+            <SkillPill skill={skills.tailwind} />
+            <SkillPill skill={skills.laravel} />
+            <SkillPill skill={skills.fastapi} />
+          </div>
+          <h3 className="font-bold text-secondary mt-4">Platforms</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <SkillPill skill={skills.node} />
+            <SkillPill skill={skills.android} />
+            <SkillPill skill={skills.ios} />
+            <SkillPill skill={skills.netlify} />
+            <SkillPill skill={skills.vercel} />
+            <SkillPill skill={skills.linux} />
+            <SkillPill skill={skills.gcc} />
+          </div>
+          <h3 className="font-bold text-secondary mt-4">Tools</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <SkillPill skill={skills.redux} />
+            <SkillPill skill={skills.gql} />
+            <SkillPill skill={skills.apollo} />
+            <SkillPill skill={skills.docker} />
+            <SkillPill skill={skills.aws} />
+            <SkillPill skill={skills.awsLambda} />
+            <SkillPill skill={skills.mysql} />
+            <SkillPill skill={skills.postgres} />
+            <SkillPill skill={skills.cypress} />
+            <SkillPill skill={skills.wp} />
+            <SkillPill skill={skills.woo} />
+            <SkillPill skill={skills.styledComponents} />
+          </div>
+          <h3 className="font-bold text-secondary mt-4">Other</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <SkillPill skill={skills.scrum} />
+            <SkillPill skill={skills.responsive} />
+            <SkillPill skill={skills.oop} />
+            <SkillPill skill={skills.rest} />
+          </div>
+        </div>
         <div>
-          <h2 className="font-bold text-center text-3xl sm:text-2xl text-primary mt-4 mb-8">
-            {"WHO I'VE WORKED WITH"}
-          </h2>
+          <Heading center>{"WHO I'VE WORKED WITH"}</Heading>
           <div className="flex flex-wrap justify-center gap-8">
             {clients.map((client, i) => (
               <div
@@ -72,15 +132,7 @@ export default function Portifolio() {
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                   {client.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className={clsx(
-                        "border rounded-full px-2 py-1 text-sm",
-                        skill.className
-                      )}
-                    >
-                      {skill.name}
-                    </span>
+                    <SkillPill key={i} skill={skill} />
                   ))}
                 </div>
               </div>

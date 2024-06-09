@@ -1,4 +1,5 @@
 import Socials from "@/ui/Socials";
+import { Heading } from "@/ui/elements";
 import Image from "next/image";
 
 const heroHeader = "Alex Chipangura";
@@ -24,23 +25,6 @@ I’ve been programming since I was 12 but have been engineering software profes
 Before formally venturing into the industry
 I mostly did platform applications while dabbling in 3D modeling/animation and indie game development.
 `;
-
-const Section = ({
-  children,
-  title,
-  className,
-}: {
-  children: React.ReactNode;
-  title: string;
-  className?: string;
-}) => (
-  <section className={className}>
-    <h2 className={"font-bold text-3xl sm:text-2xl text-primary mb-4"}>
-      {title}
-    </h2>
-    {children}
-  </section>
-);
 
 export default function Home() {
   return (
@@ -76,12 +60,14 @@ export default function Home() {
         </div>
       </div>
       <div id="sections" className="w-full max-w-screen-lg">
-        <Section title="About me" className="mb-16">
+        <section id="about" className="mb-16">
+          <Heading>About me</Heading>
           <p className="text-lg">{aboutP1}</p>
           <p className="text-lg my-4">{aboutP2}</p>
           <p className="text-lg">{aboutP3}</p>
-        </Section>
-        <Section title="Featured articles">
+        </section>
+        <section id="articles">
+          <Heading>Recent articles</Heading>
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex pb-4 mb-4 border-b border-neutral">
               <div className="mr-2 sm:mr-4">
@@ -109,7 +95,7 @@ export default function Home() {
               View all articles
             </a>
           </div>
-        </Section>
+        </section>
       </div>
     </div>
   );
