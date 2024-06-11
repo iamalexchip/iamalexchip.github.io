@@ -84,6 +84,7 @@ export default function Projects() {
     <div className="flex flex-col items-center p-4">
       <div className="max-w-screen-lg">
         <div>
+          <h1 className="font-bold text-3xl mt-4 mb-8">Projects</h1>
           <h2 className="font-bold text-center text-3xl sm:text-2xl text-primary mt-4 mb-8">
             Coming soon ....
           </h2>

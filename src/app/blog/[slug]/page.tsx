@@ -2,7 +2,7 @@ export async function generateStaticParams() {
   return [{ slug: "placeholder" }];
 }
 
-export default function Page() {
+export default function BlogPost() {
   return (
     <div className="container mx-auto my-10">
       <h1 className="text-4xl font-bold">Blog Post Placeholder</h1>

@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { clients } from "../../data/clients";
 import Socials from "@/ui/Socials";
 import Image from "next/image";
-import { Heading } from "@/ui/elements";
-import { Skill, skills } from "@/data/skills";
+import { Heading, TagPill } from "@/ui/elements";
+import { tags } from "@/data/tags";
 
 const coverLetterP1 = `
 In my previous roles as a React Native and web developer
@@ -20,14 +20,6 @@ const coverLetterP2 = ` Furthermore I have exposure to different continuous inte
 like Vercel, Netlify, Microsoft AppCenter to name a few.
 I'm also comfortable working with languages like Java, Kotlin and Python which I've worked with to some capacity in the past.
 `;
-
-const SkillPill = ({ skill }: { skill: Skill }) => (
-  <span
-    className={clsx("border rounded-full px-2 py-1 text-sm", skill.className)}
-  >
-    {skill.name}
-  </span>
-);
 
 export const metadata: Metadata = {
   title: "Portifolio - Alex Chipangura",
@@ -47,54 +39,57 @@ export default function Portifolio() {
           <Heading center>MY SKILLS</Heading>
           <h3 className="font-bold text-secondary">Languages</h3>
           <div className="flex flex-wrap gap-2 mt-2">
-            <SkillPill skill={skills.js} />
-            <SkillPill skill={skills.ts} />
-            <SkillPill skill={skills.php} />
-            <SkillPill skill={skills.kt} />
-            <SkillPill skill={skills.java} />
-            <SkillPill skill={skills.py} />
+            <TagPill tag={tags.js} />
+            <TagPill tag={tags.ts} />
+            <TagPill tag={tags.php} />
+            <TagPill tag={tags.kt} />
+            <TagPill tag={tags.java} />
+            <TagPill tag={tags.py} />
           </div>
           <h3 className="font-bold text-secondary mt-4">Frameworks</h3>
           <div className="flex flex-wrap gap-2 mt-2">
-            <SkillPill skill={skills.react} />
-            <SkillPill skill={skills.rn} />
-            <SkillPill skill={skills.next} />
-            <SkillPill skill={skills.vue} />
-            <SkillPill skill={skills.tailwind} />
-            <SkillPill skill={skills.laravel} />
-            <SkillPill skill={skills.fastapi} />
+            <TagPill tag={tags.react} />
+            <TagPill tag={tags.rn} />
+            <TagPill tag={tags.next} />
+            <TagPill tag={tags.vue} />
+            <TagPill tag={tags.tailwind} />
+            <TagPill tag={tags.material} />
+            <TagPill tag={tags.laravel} />
+            <TagPill tag={tags.fastapi} />
           </div>
           <h3 className="font-bold text-secondary mt-4">Platforms</h3>
           <div className="flex flex-wrap gap-2 mt-2">
-            <SkillPill skill={skills.node} />
-            <SkillPill skill={skills.android} />
-            <SkillPill skill={skills.ios} />
-            <SkillPill skill={skills.netlify} />
-            <SkillPill skill={skills.vercel} />
-            <SkillPill skill={skills.linux} />
-            <SkillPill skill={skills.gcc} />
+            <TagPill tag={tags.node} />
+            <TagPill tag={tags.android} />
+            <TagPill tag={tags.ios} />
+            <TagPill tag={tags.linux} />
+            <TagPill tag={tags.aws} />
+            <TagPill tag={tags.gcc} />
+            <TagPill tag={tags.vercel} />
+            <TagPill tag={tags.netlify} />
           </div>
           <h3 className="font-bold text-secondary mt-4">Tools</h3>
           <div className="flex flex-wrap gap-2 mt-2">
-            <SkillPill skill={skills.redux} />
-            <SkillPill skill={skills.gql} />
-            <SkillPill skill={skills.apollo} />
-            <SkillPill skill={skills.docker} />
-            <SkillPill skill={skills.aws} />
-            <SkillPill skill={skills.awsLambda} />
-            <SkillPill skill={skills.mysql} />
-            <SkillPill skill={skills.postgres} />
-            <SkillPill skill={skills.cypress} />
-            <SkillPill skill={skills.wp} />
-            <SkillPill skill={skills.woo} />
-            <SkillPill skill={skills.styledComponents} />
+            <TagPill tag={tags.redux} />
+            <TagPill tag={tags.gql} />
+            <TagPill tag={tags.apollo} />
+            <TagPill tag={tags.docker} />
+            <TagPill tag={tags.awsLambda} />
+            <TagPill tag={tags.mysql} />
+            <TagPill tag={tags.postgres} />
+            <TagPill tag={tags.cypress} />
+            <TagPill tag={tags.wp} />
+            <TagPill tag={tags.woo} />
+            <TagPill tag={tags.styledComponents} />
           </div>
           <h3 className="font-bold text-secondary mt-4">Other</h3>
           <div className="flex flex-wrap gap-2 mt-2">
-            <SkillPill skill={skills.scrum} />
-            <SkillPill skill={skills.responsive} />
-            <SkillPill skill={skills.oop} />
-            <SkillPill skill={skills.rest} />
+            <TagPill tag={tags.scrum} />
+            <TagPill tag={tags.responsive} />
+            <TagPill tag={tags.oop} />
+            <TagPill tag={tags.rest} />
+            <TagPill tag={tags.tdd} />
+            <TagPill tag={tags.ddd} />
           </div>
         </div>
         <div>
@@ -131,8 +126,8 @@ export default function Portifolio() {
                   {client.role}
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
-                  {client.skills.map((skill, i) => (
-                    <SkillPill key={i} skill={skill} />
+                  {client.skills.map((tag, i) => (
+                    <TagPill key={i} tag={tag} />
                   ))}
                 </div>
               </div>

@@ -1,6 +1,6 @@
-export type Skill = { name: string; className: string };
+export type Tag = { name: string; className: string };
 
-export const skills = {
+export const tags = {
   php: { name: "PHP", className: "text-purple-600 border-purple-600" },
   laravel: { name: "Laravel", className: "text-red-600 border-red-600" },
   material: {

@@ -1,3 +1,4 @@
+import ArticleList from "@/ui/ArticleList";
 import Socials from "@/ui/Socials";
 import { Heading } from "@/ui/elements";
 import Image from "next/image";
@@ -6,7 +7,7 @@ const heroHeader = "Alex Chipangura";
 
 const headerBlurb = `
 I'm a Fullstack web and Mobile (React Native) developer
-who's passionate about building applications users love.
+passionate about building applications users love.
 `;
 
 const aboutP1 = `
@@ -41,10 +42,7 @@ export default function Home() {
             <a href="/portfolio" className="btn text-lg btn-primary flex-grow">
               Portfolio
             </a>
-            <a
-              href="#contact-modal"
-              className="btn text-lg btn-secondary flex-grow"
-            >
+            <a href="/blog" className="btn text-lg btn-secondary flex-grow">
               Blog
             </a>
           </div>
@@ -68,33 +66,10 @@ export default function Home() {
         </section>
         <section id="articles">
           <Heading>Recent articles</Heading>
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex pb-4 mb-4 border-b border-neutral">
-              <div className="mr-2 sm:mr-4">
-                <a href="#">
-                  <h3 className="font-bold text-lg hover:text-primary sm:text-xl mb-4">
-                    6 tools that made my life much easier as a Software Engineer
-                  </h3>
-                  <p className="">
-                    And how to make your environment, tools, and setup work for
-                    you, not against you.
-                  </p>
-                </a>
-              </div>
-              <Image
-                className="w-28 h-28 sm:w-40 sm:h-40 object-cover rounded-md border-yellow-500 border-2"
-                src="/images/photo-1494232410401-ad00d5433cfa.jpg"
-                alt="post image"
-                width={600}
-                height={600}
-              />
-            </div>
-          ))}
-          <div className="flex justify-center">
-            <a href="/blog" className="btn btn-primary">
-              View all articles
-            </a>
-          </div>
+          <ArticleList />
+          <a href="/blog" className="btn btn-primary">
+            See all articles
+          </a>
         </section>
       </div>
     </div>
