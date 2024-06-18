@@ -9,7 +9,7 @@ export default function ArticleList() {
         <div
           key={i}
           className={clsx(
-            "flex pb-4 mb-4 border-primary border-opacity-70",
+            "flex justify-between pb-4 mb-4 border-primary border-opacity-70",
             i === articles.length - 1 ? "border-0" : "border-b"
           )}
         >

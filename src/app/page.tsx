@@ -6,25 +6,14 @@ import Image from "next/image";
 const heroHeader = "Alex Chipangura";
 
 const headerBlurb = `
-I'm a Fullstack web and Mobile (React Native) developer
+Fullstack web and Mobile developer
 passionate about building applications users love.
 `;
 
 const aboutP1 = `
-I am a mobile and full-stack web developer with 8 years experience with organizations]() based in different countries and on continents.
-Currently I specialize with React/React Native on the frontend but I'm a polyglot web generalist on the backend. [AWS, GCC, etc]
-`;
-
-const aboutP2 = `
-I write about Software Engineering things on blog, [dev.to], [medium] and [hashnode].
-I also make videos on youtube and stream on twitch from time to time.
-I find joy in contributing to various communities like [insert community]
-and maintain open source projects like timetrail and [insert project] to name a few.
-`;
-const aboutP3 = `
-I’ve been programming since I was 12 but have been engineering software professionally for 8 years.
-Before formally venturing into the industry
-I mostly did platform applications while dabbling in 3D modeling/animation and indie game development.
+I am a Software Engineer with 8 years experience
+working with organizations from around the world.
+Currently I specialize in React/React Native on the frontend but I'm a polyglot backend web generalist.
 `;
 
 export default function Home() {
@@ -61,9 +50,16 @@ export default function Home() {
         <section id="about" className="mb-16">
           <Heading>About me</Heading>
           <p className="text-lg">{aboutP1}</p>
-          <p className="text-lg my-4">{aboutP2}</p>
-          <p className="text-lg">{aboutP3}</p>
+          <p className="text-lg my-4">
+            I write, make videos and stream about Software Engineering. I find
+            joy in contributing to communities and open source{" "}
+            <a href="/projects" className="link link-primary">
+              projects
+            </a>
+            .
+          </p>
         </section>
+        {/*
         <section id="articles">
           <Heading>Recent articles</Heading>
           <ArticleList />
@@ -71,6 +67,7 @@ export default function Home() {
             See all articles
           </a>
         </section>
+        */}
       </div>
     </div>
   );

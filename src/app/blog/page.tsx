@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-export async function generateStaticParams() {
-  return [{ slug: "placeholder" }];
-}
-
 export default function BlogPage() {
   return (
     <div className="flex flex-col items-center p-4">
