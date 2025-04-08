@@ -1,4 +1,4 @@
-export type Tag = { name: string; className: string };
+export type Tag = { name: string; className?: string };
 
 export const tags = {
   php: { name: "PHP", className: "text-purple-600 border-purple-600" },
@@ -11,7 +11,7 @@ export const tags = {
     name: "Mobile App Development",
     className: "text-blue-500 border-blue-500",
   },
-  ios: { name: "iOS", className: "text-gray-500 border-gray-500" },
+  ios: { name: "iOS" },
   oop: {
     name: "Object-Oriented Programming (OOP)",
     className: "text-green-600 border-green-600",

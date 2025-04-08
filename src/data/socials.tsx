@@ -23,7 +23,6 @@ export const socials = [
     name: "twitter",
     href: "https://x.com/iamalexchip",
     icon: faTwitter,
-    messaging: true,
   },
   {
     name: "github",

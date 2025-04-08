@@ -13,8 +13,8 @@ passionate about building applications users love.
 const aboutP1 = `
 I am a Software Engineer with 8 years experience
 working with organizations from around the world.
-Currently I specialize in React/React Native on the frontend but I'm a polyglot backend web generalist.
-`;
+Currently I specialize in React/React Native on the frontend but I'm a polyglot backend web generalist
+`.trim();
 
 export default function Home() {
   return (
@@ -49,7 +49,12 @@ export default function Home() {
       <div id="sections" className="w-full max-w-screen-lg">
         <section id="about" className="mb-16">
           <Heading>About me</Heading>
-          <p className="text-lg">{aboutP1}</p>
+          <p className="text-lg">
+            {aboutP1}. You can see more about skills and experience on 👉{" "}
+            <a href="/portfolio" className="link link-primary">
+              my portfolio.
+            </a>
+          </p>
           <p className="text-lg my-4">
             I write, make videos and stream about Software Engineering. I find
             joy in contributing to communities and open source{" "}

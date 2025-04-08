@@ -61,6 +61,28 @@ export const clients: Client[] = [
     ],
   },
   {
+    name: "Scrums.com (formerly SovTech)",
+    country: "South Africa",
+    summary:
+      "The leading software development company from Africa with over a decade of experience. Specialising in providing subscription-based access to world-class engineering teams and software development professionals, we help businesses scale, by building world-class software, on flexible subscriptions.",
+    role: "Full-tack Developer",
+    logo: "sovtech.svg",
+    logoBg: "bg-blue-700",
+    skills: [
+      tags.php,
+      tags.laravel,
+      tags.mysql,
+      tags.oop,
+      tags.wp,
+      tags.woo,
+      tags.js,
+      tags.react,
+      tags.redux,
+      tags.rn,
+      tags.devops,
+    ],
+  },
+  {
     name: "Redbear Studios",
     country: "South Africa",
     summary: ` 
@@ -83,6 +105,7 @@ export const clients: Client[] = [
   },
   {
     name: "Lekker Commerce",
+    country: "South Africa",
     summary:
       "Specialised fullstack software development services for the enterprise",
     logo: "lekker.jpg",
@@ -148,28 +171,6 @@ export const clients: Client[] = [
     role: "Fullstack Contributor",
     logo: "attendize.png",
     logoBg: "bg-gray-800",
-  },
-  {
-    name: "SovTech",
-    country: "South Africa",
-    summary:
-      "The leading software development company from Africa with over a decade of experience. Specialising in providing subscription-based access to world-class engineering teams and software development professionals, we help businesses scale, by building world-class software, on flexible subscriptions.",
-    role: "Full-tack Developer",
-    logo: "sovtech.svg",
-    logoBg: "bg-blue-700",
-    skills: [
-      tags.php,
-      tags.laravel,
-      tags.mysql,
-      tags.oop,
-      tags.wp,
-      tags.woo,
-      tags.js,
-      tags.react,
-      tags.redux,
-      tags.rn,
-      tags.devops,
-    ],
   },
   {
     name: "DigsConnect.com",

@@ -123,7 +123,7 @@ export default function Portifolio() {
                 )}
                 <p className="my-4">{client.summary}</p>
                 <h4 className="font-bold text-xl text-primary">
-                  {client.role}
+                  Role: {client.role}
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                   {client.skills.map((tag, i) => (
